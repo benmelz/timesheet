@@ -11,13 +11,16 @@
   "devDependencies": {
     "eslint": "^8.29.0",
     "eslint-config-google": "^0.14.0",
-    "serve": "^14.1.2"
+    "serve": "^14.1.2",
+    "stylelint": "^14.16.0",
+    "stylelint-config-standard-scss": "^6.1.0"
   },
   "scripts": {
     "build": "npm run build:css && npm run build:js",
     "build:css": "sass ./src/:./public/ --no-source-map --load-path=node_modules",
     "build:js": "esbuild src/*.js --bundle --outdir=public",
-    "lint": "eslint .",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint ./**/*.scss",
     "serve": "serve public/"
   }
 }
