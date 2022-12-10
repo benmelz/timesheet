@@ -1,1 +1,22 @@
-// To be used.
+$body-color: #f8f9fa;
+$body-bg: #212529;
+$border-color: #6c757d;
+$input-border-color: $border-color;
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/utilities/api";
+
+#timesheet {
+  min-height: 58px;
+}

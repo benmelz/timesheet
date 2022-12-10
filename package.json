@@ -5,6 +5,7 @@
   "author": "benmelz",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "esbuild": "^0.16.3",
     "sass": "^1.56.2"
   },
