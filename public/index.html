@@ -7,9 +7,29 @@
     <title>Timesheet</title>
   </head>
   <body>
-    <input id="name" type="text" aria-label="Name" />
-    <input id="date" type="date" aria-label="Date" />
-    <pre id="timesheet"></pre>
+    <div class="container py-5">
+      <h1>Timesheet</h1>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input id="name" class="form-control" type="text" placeholder="Name" />
+            <label for="name">Name</label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-floating mb-3">
+            <input id="date" class="form-control" type="date" placeholder="Date" />
+            <label for="date">Date</label>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-dark border">
+        <div class="card-body">
+          <pre id="timesheet" class="card-text"></pre>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 
