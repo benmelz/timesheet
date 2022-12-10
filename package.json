@@ -4,13 +4,19 @@
   "version": "1.0.0",
   "author": "benmelz",
   "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.16.3",
+    "sass": "^1.56.2"
+  },
   "devDependencies": {
     "eslint": "^8.29.0",
     "eslint-config-google": "^0.14.0",
     "serve": "^14.1.2"
   },
   "scripts": {
-    "serve": "serve public/",
-    "lint": "eslint ."
+    "build:css": "sass ./src/:./public/ --no-source-map --load-path=node_modules",
+    "build:js": "esbuild src/*.js --bundle --outdir=public",
+    "lint": "eslint .",
+    "serve": "serve public/"
   }
 }
