@@ -97,6 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
     timesheetText.textContent = formatTimesheet(name, date);
   }
 
+  /**
+   * Checks to see if input fields are valid and applies/removes validation properties.
+   */
+  function validateFields() {
+    const name = nameInput.value;
+    const date = parseISOLocal(dateInput.value);
+    if (name === '')
+      nameInput.classList.add('is-invalid');
+    else
+      nameInput.classList.remove('is-invalid');
+    if (date === null)
+      dateInput.classList.add('is-invalid');
+    else
+      dateInput.classList.remove('is-invalid');
+  }
+
   nameInput.addEventListener('keyup', generateTimesheet);
   dateInput.addEventListener('change', generateTimesheet);
 
@@ -104,7 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('name', nameInput.value);
   });
 
+  nameInput.addEventListener('keyup', validateFields);
+  dateInput.addEventListener('change', validateFields);
+
   nameInput.value = localStorage.getItem('name');
   dateInput.value = formatISOLocal(new Date());
   generateTimesheet();
+  validateFields();
 });
