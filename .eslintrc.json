@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "curly": ["error", "multi-or-nest"],
+    "indent": ["error", 2, { "MemberExpression": 1, "SwitchCase": 1 }],
+    "max-len": ["error", { "code": 120 }],
+    "object-curly-spacing": ["error", "always"]
+  }
+}

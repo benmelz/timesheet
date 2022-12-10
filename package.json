@@ -1,0 +1,16 @@
+{
+  "name": "timesheet",
+  "description": "A simple SPA for formatting weekly timesheets.",
+  "version": "1.0.0",
+  "author": "benmelz",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-google": "^0.14.0",
+    "serve": "^14.1.2"
+  },
+  "scripts": {
+    "serve": "serve public/",
+    "lint": "eslint ."
+  }
+}
