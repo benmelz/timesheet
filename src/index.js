@@ -100,6 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
   nameInput.addEventListener('keyup', generateTimesheet);
   dateInput.addEventListener('change', generateTimesheet);
 
+  nameInput.addEventListener('keyup', () => {
+    localStorage.setItem('name', nameInput.value);
+  });
+
+  nameInput.value = localStorage.getItem('name');
   dateInput.value = formatISOLocal(new Date());
   generateTimesheet();
 });
