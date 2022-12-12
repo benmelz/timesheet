@@ -1,3 +1,5 @@
+import './index.scss';
+
 /**
  * Finds the beginning of a week, given a reference date.
  *

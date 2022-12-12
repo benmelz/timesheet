@@ -1,5 +1,2 @@
 /node_modules/
-/public/**/*
-!/public/favicon.ico
-!/public/favicon.svg
-!/public/index.html
+/public/

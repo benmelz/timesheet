@@ -14,5 +14,14 @@
     "indent": ["error", 2, { "MemberExpression": 1, "SwitchCase": 1 }],
     "max-len": ["error", { "code": 120 }],
     "object-curly-spacing": ["error", "always"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["webpack.config.js"],
+      "env": {
+        "browser": false,
+        "node": true
+      }
+    }
+  ]
 }
