@@ -11,6 +11,8 @@ module.exports = () => {
     context: path.resolve(__dirname, 'src'),
     entry: './index.mjs',
     output: {
+      filename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.js`,
+      chunkFilename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.chunk.js`,
       path: path.resolve(__dirname, 'public'),
       clean: true
     },
@@ -23,7 +25,10 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({ template: 'index.html.ejs' }),
-      new MiniCssExtractPlugin()
+      new MiniCssExtractPlugin({
+        filename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.css`,
+        chunkFilename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.chunk.css`
+      })
     ]
   };
 };
