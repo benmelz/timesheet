@@ -2,17 +2,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
-process.env['NODE_ENV'] ??= 'development';
-
-module.exports = () => {
+module.exports = (arg) => {
   const isProduction = process.env['NODE_ENV'] === 'production';
   return {
     mode: (isProduction) ? 'production' : 'development',
     context: path.resolve(__dirname, 'src'),
     entry: './index.mjs',
     output: {
-      filename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.js`,
-      chunkFilename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.chunk.js`,
+      filename: `[name]${(isProduction) ? '.[contenthash:8]' : ''}.js`,
+      chunkFilename: `[name]${(isProduction) ? '.[contenthash:8]' : ''}.chunk.js`,
       path: path.resolve(__dirname, 'public'),
       clean: true
     },
@@ -26,8 +24,8 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({ template: 'index.html.ejs' }),
       new MiniCssExtractPlugin({
-        filename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.css`,
-        chunkFilename: `[name]${(process.env['NODE_ENV'] === 'production') ? '.[contenthash:8]' : ''}.chunk.css`
+        filename: `[name]${(isProduction) ? '.[contenthash:8]' : ''}.css`,
+        chunkFilename: `[name]${(isProduction) ? '.[contenthash:8]' : ''}.chunk.css`
       })
     ]
   };
