@@ -3,6 +3,8 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
+    '!src/index.jsx',
+    '!src/serviceWorker.js',
   ],
   coverageDirectory: 'coverage',
   coverageThreshold: {
