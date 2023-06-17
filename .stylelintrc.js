@@ -5,5 +5,10 @@ module.exports = {
       files: ['**/*.scss'],
       extends: 'stylelint-config-standard-scss'
     }
+  ],
+  ignoreFiles: [
+    './coverage/**/*',
+    './dist/**/*',
+    './node_modules/**/*',
   ]
 };

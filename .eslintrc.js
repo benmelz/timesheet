@@ -1,25 +1,35 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  env: {
+    browser: true,
+    es2021: true,
   },
-  'extends': [
-    'plugin:react/recommended',
-    'plugin:jest/all',
+  extends: [
     'google',
+    'plugin:react/recommended',
   ],
-  'overrides': [
-  ],
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'sourceType': 'module',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  'plugins': [
+  plugins: [
     'react',
   ],
-  'rules': {
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
-  'ignorePatterns': [
+  overrides: [
+    {
+      files: ['**/*.test.js', '**/*.test.jsx'],
+      extends: [
+        'google',
+        'plugin:jest/all',
+        'plugin:react/recommended',
+      ],
+    },
+  ],
+  ignorePatterns: [
     '/dist/',
     '/node_modules/',
   ],
