@@ -41,8 +41,6 @@
   },
   "scripts": {
     "build": "webpack",
-    "build:dev": "NODE_ENV=development webpack",
-    "build:prod": "NODE_ENV=production webpack",
     "lint:css": "stylelint ./**/*.css ./**/*.scss",
     "lint:js": "eslint .",
     "serve": "webpack serve",

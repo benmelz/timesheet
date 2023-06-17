@@ -19,6 +19,6 @@ describe('name field', () => {
     const input = screen.getByLabelText('Name');
     fireEvent.change(input, {target: {value: 'Melz, Benjamin'}});
     expect(setName.mock.calls).toHaveLength(1);
-    expect(setName.mock.calls[0][0]).toStrictEqual('Melz, Benjamin');
+    expect(setName.mock.calls[0][0]).toBe('Melz, Benjamin');
   });
 });

@@ -9,6 +9,7 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: process.env.PUBLIC_PATH || '/',
     filename: (process.env.NODE_ENV === 'production') ?
       '[name].[contenthash].js' :
       '[name].js',
