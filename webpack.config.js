@@ -1,7 +1,8 @@
-const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode: (process.env.NODE_ENV === 'production') ? 'production' : 'development',
@@ -14,8 +15,13 @@ module.exports = {
     host: 'localhost',
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {from: './src/robots.txt', to: 'robots.txt'},
+      ],
+    }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
+      template: 'src/index.html.ejs',
     }),
     new MiniCssExtractPlugin(),
     (process.env.NODE_ENV === 'production') ?
@@ -42,8 +48,8 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: 'asset',
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif|ico|json)$/i,
+        type: 'asset/resource',
       },
     ],
   },
