@@ -9,6 +9,13 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    filename: (process.env.NODE_ENV === 'production') ?
+      '[name].[contenthash].js' :
+      '[name].js',
+    chunkFilename: (process.env.NODE_ENV === 'production') ?
+      '[id].[contenthash].js' :
+      '[id].js',
+    clean: true,
   },
   devServer: {
     open: true,
@@ -23,7 +30,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html.ejs',
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: (process.env.NODE_ENV === 'production') ?
+        '[name].[contenthash].css' :
+        '[name].css',
+      chunkFilename: (process.env.NODE_ENV === 'production') ?
+        '[id].[contenthash].css' :
+        '[id].css',
+    }),
     (process.env.NODE_ENV === 'production') ?
       new WorkboxWebpackPlugin.GenerateSW() :
       undefined,
@@ -52,5 +66,10 @@ module.exports = {
         type: 'asset/resource',
       },
     ],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };
