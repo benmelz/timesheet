@@ -1,0 +1,18 @@
+name: setup
+description: Set up repository
+inputs:
+  environment:
+    description: Environment to set up repository for
+    required: true
+    default: development
+runs:
+  using: composite
+  steps:
+    - id: read_node_version
+      run: echo "version=$(cat .node-version)" >> $GITHUB_OUTPUT
+      shell: bash
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ steps.read_node_version.outputs.version }}
+    - run: npm install ${{ inputs.environment == 'production' && '--omit=dev' || '' }}
+      shell: bash
