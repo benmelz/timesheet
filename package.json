@@ -3,7 +3,7 @@
   "description": "A simple SPA for formatting weekly timesheets",
   "version": "1.0.0",
   "dependencies": {
-    "@babel/core": "^7.22.7",
+    "@babel/core": "^7.22.8",
     "@babel/preset-env": "^7.22.7",
     "@babel/preset-react": "^7.22.5",
     "autoprefixer": "^10.4.14",
