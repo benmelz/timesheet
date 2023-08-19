@@ -2,30 +2,27 @@
   "name": "timesheet",
   "description": "A simple SPA for formatting weekly timesheets",
   "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint .",
+    "lint:css": "stylelint ./**/*.css ./**/*.scss",
+    "preview": "vite preview",
+    "test": "jest"
+  },
   "dependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "@babel/preset-react": "*",
-    "autoprefixer": "*",
-    "babel-loader": "*",
+    "@vitejs/plugin-react": "*",
     "bootstrap": "*",
-    "copy-webpack-plugin": "*",
-    "css-loader": "*",
-    "html-webpack-plugin": "*",
-    "mini-css-extract-plugin": "*",
-    "postcss": "*",
-    "postcss-loader": "*",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
     "sass": "*",
-    "sass-loader": "*",
-    "style-loader": "*",
-    "webpack": "*",
-    "webpack-cli": "*",
-    "workbox-webpack-plugin": "*"
+    "vite": "*"
   },
   "devDependencies": {
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
     "@testing-library/jest-dom": "*",
     "@testing-library/react": "*",
     "eslint": "*",
@@ -36,15 +33,6 @@
     "jest-environment-jsdom": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",
-    "stylelint-config-standard-scss": "*",
-    "webpack-dev-server": "*"
-  },
-  "scripts": {
-    "build": "webpack",
-    "lint:css": "stylelint ./**/*.css ./**/*.scss",
-    "lint:js": "eslint .",
-    "serve": "webpack serve",
-    "watch": "webpack --watch",
-    "test": "jest"
+    "stylelint-config-standard-scss": "*"
   }
 }
