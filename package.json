@@ -18,13 +18,15 @@
     "react": "*",
     "react-dom": "*",
     "sass": "*",
-    "vite": "*"
+    "vite": "*",
+    "vite-plugin-pwa": "*"
   },
   "devDependencies": {
     "@babel/preset-env": "*",
     "@babel/preset-react": "*",
     "@testing-library/jest-dom": "*",
     "@testing-library/react": "*",
+    "@vite-pwa/assets-generator": "^0.0.4",
     "eslint": "*",
     "eslint-config-google": "*",
     "eslint-plugin-jest": "*",
