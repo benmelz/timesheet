@@ -25,4 +25,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
-      - run: NODE_ENV=production npm run build
+      - run: npm run build

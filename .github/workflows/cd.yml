@@ -21,7 +21,7 @@ jobs:
       - uses: ./.github/actions/setup
         with:
           environment: production
-      - run: NODE_ENV=production PUBLIC_PATH=/${{ github.event.repository.name }} npm run build
+      - run: npm run build
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
         with:
