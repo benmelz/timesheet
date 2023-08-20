@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import NameField from './NameField.jsx';
 import DateField from './DateField.jsx';
 

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 /**
  * Parses a string in ISO format (YYYY-MM-DD) to a Date object.
