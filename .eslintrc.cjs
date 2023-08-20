@@ -24,7 +24,6 @@ module.exports = {
       files: ['**/*.test.js', '**/*.test.jsx'],
       extends: [
         'google',
-        'plugin:jest/all',
         'plugin:react/recommended',
       ],
     },

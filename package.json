@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lint:css": "stylelint ./**/*.css ./**/*.scss",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "vitest run --coverage"
   },
   "dependencies": {
     "@vitejs/plugin-react": "*",
@@ -22,19 +22,16 @@
     "vite-plugin-pwa": "*"
   },
   "devDependencies": {
-    "@babel/preset-env": "*",
-    "@babel/preset-react": "*",
     "@testing-library/jest-dom": "*",
     "@testing-library/react": "*",
-    "@vite-pwa/assets-generator": "^0.0.4",
+    "@vitest/coverage-v8": "^0.34.2",
     "eslint": "*",
     "eslint-config-google": "*",
-    "eslint-plugin-jest": "*",
     "eslint-plugin-react": "*",
-    "jest": "*",
-    "jest-environment-jsdom": "*",
+    "jsdom": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",
-    "stylelint-config-standard-scss": "*"
+    "stylelint-config-standard-scss": "*",
+    "vitest": "*"
   }
 }
