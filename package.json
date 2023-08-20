@@ -1,6 +1,6 @@
 {
   "name": "timesheet",
-  "description": "A simple SPA for formatting weekly timesheets",
+  "description": "A simple application to format weekly timesheets.",
   "version": "1.0.0",
   "type": "module",
   "scripts": {

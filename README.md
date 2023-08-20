@@ -1,3 +1,3 @@
 # timesheet
 
-A simple SPA for formatting weekly timesheets
+A simple application to format weekly timesheets.
