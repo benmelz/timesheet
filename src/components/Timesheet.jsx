@@ -2,6 +2,43 @@ import {useEffect, useMemo, useState} from 'react';
 import NameField from './NameField.jsx';
 import DateField from './DateField.jsx';
 
+/** An input/output interface for formatting a timesheet.
+ *
+ * @constructor
+ * @return {JSX.Element}
+ */
+export default function Timesheet() {
+  const [name, setName] = useState(localStorage.getItem('name') || '');
+  const [date, setDate] = useState(new Date());
+  const text = useMemo(() => formatTimesheet(name, date), [name, date]);
+
+  useEffect(() => {
+    localStorage.setItem('name', name);
+  }, [name]);
+
+  return (
+    <>
+      <div className={'row g-md-3'}>
+        <div className={'col-md-6'}>
+          <NameField name={name} setName={setName} />
+        </div>
+        <div className={'col-md-6'}>
+          <DateField date={date} setDate={setDate} />
+        </div>
+      </div>
+      {(text !== null) && (
+        <div className={'card'}>
+          <div className={'card-body'}>
+            <pre className={'card-text'}>
+              {text}
+            </pre>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 /**
  * Finds the beginning of a week given a reference date.
  *
@@ -67,42 +104,3 @@ ${name}
 ${rows}
   `.trim();
 }
-
-/** An input/output interface for formatting a timesheet.
- *
- * @constructor
- * @return {JSX.Element}
- */
-function Timesheet() {
-  const [name, setName] = useState(localStorage.getItem('name') || '');
-  const [date, setDate] = useState(new Date());
-  const text = useMemo(() => formatTimesheet(name, date), [name, date]);
-
-  useEffect(() => {
-    localStorage.setItem('name', name);
-  }, [name]);
-
-  return (
-    <>
-      <div className={'row g-md-3'}>
-        <div className={'col-md-6'}>
-          <NameField name={name} setName={setName} />
-        </div>
-        <div className={'col-md-6'}>
-          <DateField date={date} setDate={setDate} />
-        </div>
-      </div>
-      {(text !== null) && (
-        <div className={'card'}>
-          <div className={'card-body'}>
-            <pre className={'card-text'}>
-              {text}
-            </pre>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-export default Timesheet;

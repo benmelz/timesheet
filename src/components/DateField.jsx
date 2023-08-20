@@ -2,35 +2,6 @@ import PropTypes from 'prop-types';
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 /**
- * Parses a string in ISO format (YYYY-MM-DD) to a Date object.
- *
- * @param {string} string
- * @return {Date|null}
- */
-function parseISO(string) {
-  if (typeof(string) !== 'string' || !(string.match(/^\d{4}-\d{2}-\d{2}$/))) {
-    return null;
-  }
-  const [year, month, day] = string.split('-').map((n) => parseInt(n));
-  return new Date(year, month - 1, day);
-}
-
-/**
- * Formats a date object in ISO format (YYYY-MM-DD).
- *
- * @param {Date} date
- * @return {string|null}
- */
-function formatISO(date) {
-  if (!(date instanceof Date)) return null;
-  const pad = (n) => n.toString().padStart(2, '0');
-  const year = date.getFullYear();
-  const month = pad(date.getMonth() + 1);
-  const day = pad(date.getDate());
-  return `${year}-${month}-${day}`;
-}
-
-/**
  * A styled date field that controls a Date property.
  *
  * @constructor
@@ -38,13 +9,13 @@ function formatISO(date) {
  * @param {function} setDate
  * @return {JSX.Element}
  */
-function DateField({date, setDate}) {
+export default function DateField({date, setDate}) {
   const [dateString, setDateString] = useState(formatISO(date) || '');
   const handleDateStringChange = useCallback((e) => {
-    return setDateString(e.target.value), [setDateString];
-  });
+    return setDateString(e.target.value);
+  }, [setDateString]);
 
-  const prevDateRef = useRef();
+  const prevDateRef = useRef(undefined);
   useEffect(() => {
     prevDateRef.current = date;
   }, [date, prevDateRef]);
@@ -73,4 +44,31 @@ DateField.propTypes = {
   setDate: PropTypes.func.isRequired,
 };
 
-export default DateField;
+/**
+ * Parses a string in ISO format (YYYY-MM-DD) to a Date object.
+ *
+ * @param {string} string
+ * @return {Date|null}
+ */
+function parseISO(string) {
+  if (typeof(string) !== 'string' || !(string.match(/^\d{4}-\d{2}-\d{2}$/))) {
+    return null;
+  }
+  const [year, month, day] = string.split('-').map((n) => parseInt(n));
+  return new Date(year, month - 1, day);
+}
+
+/**
+ * Formats a date object in ISO format (YYYY-MM-DD).
+ *
+ * @param {Date} date
+ * @return {string|null}
+ */
+function formatISO(date) {
+  if (!(date instanceof Date)) return null;
+  const pad = (n) => n.toString().padStart(2, '0');
+  const year = date.getFullYear();
+  const month = pad(date.getMonth() + 1);
+  const day = pad(date.getDate());
+  return `${year}-${month}-${day}`;
+}
