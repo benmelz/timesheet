@@ -1,4 +1,3 @@
-import React from 'react';
 import Timesheet from './components/Timesheet.jsx';
 
 /**
@@ -7,7 +6,7 @@ import Timesheet from './components/Timesheet.jsx';
  * @constructor
  * @return {JSX.Element}
  */
-function App() {
+export default function App() {
   return (
     <div className={'container my-3'}>
       <h1>Timesheet</h1>
@@ -16,5 +15,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

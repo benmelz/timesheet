@@ -1,12 +1,10 @@
-import '@testing-library/jest-dom';
 import {fireEvent, render, screen} from '@testing-library/react';
-import React from 'react';
-import Timesheet from './Timesheet.jsx';
+import Timesheet from '../../src/components/Timesheet.jsx';
 
 describe('timesheet', () => {
   it('renders a timesheet based on the input name and date', () => {
     expect.assertions(2);
-    render(<Timesheet />);
+    render((<Timesheet />));
     const nameInput = screen.getByLabelText('Name');
     fireEvent.change(nameInput, {target: {value: 'Melz, Benjamin'}});
     const dateInput = screen.getByLabelText('Date');

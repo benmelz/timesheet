@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 
 /**
  * A styled name field that controls a string property.
@@ -9,7 +9,7 @@ import React, {useCallback} from 'react';
  * @param {function} setName
  * @return {JSX.Element}
  */
-function NameField({name, setName}) {
+export default function NameField({name, setName}) {
   const handleNameChange = useCallback((e) => {
     return setName(e.target.value);
   }, [setName]);
@@ -32,5 +32,3 @@ NameField.propTypes = {
   name: PropTypes.string.isRequired,
   setName: PropTypes.func.isRequired,
 };
-
-export default NameField;

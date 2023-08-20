@@ -1,50 +1,41 @@
 {
   "name": "timesheet",
-  "description": "A simple SPA for formatting weekly timesheets",
+  "description": "A simple application to format weekly timesheets.",
   "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint .",
+    "lint:css": "stylelint ./**/*.css ./**/*.scss",
+    "preview": "vite preview",
+    "test": "vitest run --coverage"
+  },
   "dependencies": {
-    "@babel/core": "*",
-    "@babel/preset-env": "*",
-    "@babel/preset-react": "*",
-    "autoprefixer": "*",
-    "babel-loader": "*",
+    "@vitejs/plugin-react": "*",
     "bootstrap": "*",
-    "copy-webpack-plugin": "*",
-    "css-loader": "*",
-    "html-webpack-plugin": "*",
-    "mini-css-extract-plugin": "*",
-    "postcss": "*",
-    "postcss-loader": "*",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
     "sass": "*",
-    "sass-loader": "*",
-    "style-loader": "*",
-    "webpack": "*",
-    "webpack-cli": "*",
-    "workbox-webpack-plugin": "*"
+    "vite": "*",
+    "vite-plugin-pwa": "*"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "*",
     "@testing-library/react": "*",
+    "@vitest/coverage-v8": "^0.34.2",
     "eslint": "*",
     "eslint-config-google": "*",
-    "eslint-plugin-jest": "*",
     "eslint-plugin-react": "*",
-    "jest": "*",
-    "jest-environment-jsdom": "*",
+    "eslint-plugin-react-hooks": "*",
+    "eslint-plugin-react-refresh": "*",
+    "eslint-plugin-vitest": "*",
+    "eslint-plugin-vitest-globals": "^1.4.0",
+    "jsdom": "*",
     "stylelint": "*",
     "stylelint-config-standard": "*",
     "stylelint-config-standard-scss": "*",
-    "webpack-dev-server": "*"
-  },
-  "scripts": {
-    "build": "webpack",
-    "lint:css": "stylelint ./**/*.css ./**/*.scss",
-    "lint:js": "eslint .",
-    "serve": "webpack serve",
-    "watch": "webpack --watch",
-    "test": "jest"
+    "vitest": "*"
   }
 }
