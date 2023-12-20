@@ -24,7 +24,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "*",
     "@testing-library/react": "*",
-    "@vitest/coverage-v8": "^0.34.6",
+    "@vitest/coverage-v8": "^1.1.0",
     "eslint": "*",
     "eslint-config-google": "*",
     "eslint-plugin-react": "*",
